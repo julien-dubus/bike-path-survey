@@ -131,6 +131,7 @@ function onMapClick(e) {
 	document.getElementById("removeLastPoint").disabled = false;
 	if (points.length == 1) {
 		document.getElementById("sendRoute").disabled = true;
+		document.getElementById("sendRoute2").disabled = true;
 	}
 	if (points.length > 1) {
 		document.getElementById("openPopup").disabled = false;
@@ -187,10 +188,12 @@ function RemoveLastPoint() {
 		document.getElementById("removeLastPoint").disabled = true;
 		if (routes.length > 0) {
 			document.getElementById("sendRoute").disabled = false;
+			document.getElementById("sendRoute2").disabled = false;
 		}
 	}
 	if (markers.length == 1) {
 		document.getElementById("sendRoute").disabled = true;
+		document.getElementById("sendRoute2").disabled = true;
 		document.getElementById("openPopup").disabled = true;
 	}
 };
@@ -322,6 +325,7 @@ function EndRoute() {
 	document.getElementById("openPopup").disabled = true;
 	document.getElementById("removeLastPoint").disabled = true;
 	document.getElementById("sendRoute").disabled = false;
+	document.getElementById("sendRoute2").disabled = false;
 	routes.push(currentRoute);
 	polylines.push(currentPolyline);
 	currentRoute = [];
@@ -339,6 +343,10 @@ function SendRoute() {
 	};
 	
 	var gender = document.querySelector('input[name="gender"]:checked').value;
+	if (gender == "other") {
+		console.log("ouioui");
+		gender = "other:" + document.getElementById("otherGenderInput").value;
+	}
 	var age = document.querySelector('input[name="age"]:checked').value;
 	
 	var path = gender + ";" + age + ";";
@@ -350,6 +358,7 @@ function SendRoute() {
 	window.open(link);
 	
 	document.getElementById("sendRoute").disabled = true;
+	document.getElementById("sendRoute2").disabled = true;
 	map.removeEventListener('click', onMapClick);
 	map.on('click', function () {
 	window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
