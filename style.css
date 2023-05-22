@@ -13,7 +13,7 @@ html, body {
 	cursor : pointer;
 }
 
-#button-container button {
+.button {
   display: inline;
   margin: 20px auto;
   padding: 10px 20px;
@@ -26,16 +26,16 @@ html, body {
   cursor: pointer;
 }
 
-#button-container button:not(:disabled):hover {
+.button:not(:disabled):hover {
   background-color: #555;
 }
 
-#button-container button:disabled {
+.button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-#button-container button:active {
+.button:active {
   background-color: #222;
 }
 
@@ -110,6 +110,16 @@ footer {
 	width : 138px;
 }
 
+#userFormDiv {
+  margin : auto;
+  border : 3px solid #333;
+  border-radius : 4px;
+}
+
+#userForm {
+	margin : 20px;
+}
+
 .submitButton {
   display: block;
   margin: 20px auto;
@@ -123,13 +133,15 @@ footer {
   cursor: pointer;
 }
 
-
-#userFormDiv {
-  margin : auto;
-  border : 3px solid #333;
-  border-radius : 4px;
+.submitButton:not(:disabled):hover {
+  background-color: #555;
 }
 
-#userForm {
-	margin : 20px;
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submitButton:active {
+  background-color: #222;
 }
