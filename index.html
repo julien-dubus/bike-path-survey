@@ -22,9 +22,9 @@
 		<p id="title_instructions">Click on the map to set an origin and then click again to set a destination. If the route created does not match to the path you use, you can delete the last point and add checkpoints along your route.</p>
 		<label for="input">Or select a GPS file instead :</label> <input type="file" id="file_input"><span style="color:red; display:block" id="warning"></span> 
 		<div id="button-container">
-			<button type="button" id="removeLastPoint" onclick="RemoveLastPoint();" disabled="true">Remove last point</button>
-			<button type="button" id="openPopup" onclick="OpenPopup();" disabled="true">End the route</button>
-			<button type="button" id="sendRoute" onclick="SendRoute();" disabled="true">Submit your routes</button>
+			<button class="button" type="button" id="removeLastPoint" onclick="RemoveLastPoint();" disabled="true">Remove last point</button>
+			<button class="button" type="button" id="openPopup" onclick="OpenPopup();" disabled="true">End the route</button>
+			<button class="button" type="button" id="sendRoute" onclick="SendRoute();" disabled="true">Submit your routes</button>
 		</div>
 	</footer>
 	
@@ -69,7 +69,7 @@
 				65+<br>
 			</label>
 		</div>
-		<button type="button" id="sendRoute2" class="submitButton" onclick="SendRoute();">Submit your routes</button>
+		<button type="button" id="sendRoute2" class="submitButton" onclick="SendRoute();" disabled="true">Submit your routes</button>
 	</div>
 	
 	<script src="script.js"></script>
