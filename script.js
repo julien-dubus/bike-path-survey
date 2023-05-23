@@ -196,6 +196,12 @@ function RemoveLastPoint() {
 		document.getElementById("sendRoute2").disabled = true;
 		document.getElementById("openPopup").disabled = true;
 	}
+	if (markers.length > 1) {
+		markers[markers.length - 1].setIcon(destIcon);
+		if (markers.length > 2) {
+			markers[markers.length - 2].setIcon(midIcon);
+		}
+	}
 };
 
 function LoadGPXFile() {
